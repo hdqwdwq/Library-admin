@@ -1,0 +1,19 @@
+server:
+  port: 8080
+#数据源配置
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql:///library
+    driver-class-name: com.mysql.jdbc.Driver
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:com/library/*/mapper/*Mapper.xml #可以不配置
+  type-aliases-package: com.library.domain,com.library.query
+
+#日志
+logging:
+  level:
+    com:
+      library: debug

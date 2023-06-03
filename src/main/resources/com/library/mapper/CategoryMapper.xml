@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.library.mapper.CategoryMapper">
+    <insert id="add">
+        insert into category(
+            Name,State
+        )
+        values (#{name},#{state})
+    </insert>
+    <update id="update">
+        update category
+        set Name=#{name},State=#{state}
+        where ID=#{id}
+    </update>
+    <delete id="deleteById">
+        delete from category where ID=#{id}
+    </delete>
+    <select id="selectAll" resultType="com.library.domain.Category">
+        select * from category
+    </select>
+    <select id="selectById" resultType="com.library.domain.Category">
+        select * from category where ID=#{ID}
+    </select>
+</mapper>

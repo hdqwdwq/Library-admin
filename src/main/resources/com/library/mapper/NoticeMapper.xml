@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.library.mapper.NoticeMapper">
+    <select id="selectByPage" resultMap="NoticeMap">
+        select * from person_notice
+        <include refid="whereSQL"></include>
+        limit #{start},#{pageSize}
+    </select>
+    <resultMap id="NoticeMap" type="com.library.domain.Notice">
+        <id column="id" property="id"></id>
+        <result column="notice_title" property="notice_title"></result>
+        <result column="notice_type" property="notice_type"></result>
+        <result column="notice_status" property="notice_status"></result>
+        <result column="notice_content" property="notice_content"></result>
+        <result column="create_by" property="create_by"></result>
+    </resultMap>
+    <select id="count" resultType="java.lang.Long">
+        select count(id) from person_notice
+        <include refid="whereSQL"></include>
+    </select>
+    <sql id="whereSQL">
+        <where>
+            <if test="keyword!=null and keyword!=''">
+                notice_title like concat('%',#{keyword},'%')
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectById" resultType="com.library.domain.Notice">
+        select * from person_notice where id=#{id}
+    </select>
+    <select id="selectAll" resultType="com.library.domain.Notice">
+        select * from person_notice
+    </select>
+
+    <insert id="add" >
+insert into person_notice(
+                          notice_title,notice_type,notice_status,notice_content,create_by
+                    )values (#{notice_title},#{notice_type},#{notice_status},#{notice_content},#{create_by})
+    </insert>
+
+    <update id="update">
+        update person_notice
+        set
+            notice_title = #{notice_title},
+            notice_type = #{notice_type},
+            notice_status = #{notice_status},
+            notice_content = #{notice_content},
+            create_by = #{create_by}
+        where id = #{id}
+    </update>
+    <delete id="deleteById">
+       delete from person_notice where id=#{id}
+    </delete>
+    <delete id="batchDelete">
+        delete from person_notice where id in
+        <foreach collection="list" separator="," item="id" open="(" close=")">
+        #{id}
+        </foreach>
+    </delete>
+
+</mapper>

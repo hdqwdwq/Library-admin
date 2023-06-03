@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.library.mapper.SeatMapper">
+    <insert id="add">
+        insert into seat(
+            position_id,state
+        )
+        values (#{position_id},#{state})
+    </insert>
+    <update id="update">
+        update seat
+        set position_id=#{position_id},state=#{state}
+        where id=#{id}
+    </update>
+    <delete id="deleteById">
+        delete from seat where id=#{id}
+    </delete>
+    <select id="selectAll" resultType="com.library.domain.Seat">
+        select * from seat
+    </select>
+    <select id="selectByPositionid" resultType="com.library.domain.Seat">
+        select * from seat where position_id=#{position_id}
+    </select>
+</mapper>

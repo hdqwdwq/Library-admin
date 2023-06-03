@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.library.mapper.IBookMapper">
+    <delete id="batchDelete">
+        delete from book where id in
+        <foreach collection="list" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <insert id="add">
+insert into book(
+               title,author,categoryId,publishDate,state
+)
+values (#{title},#{author},#{category.id},#{publishDate},#{state})
+    </insert>
+    <update id="update">
+    update book set
+    title=#{title},author=#{author},categoryId=#{category.id},publishDate=#{publishDate},state=#{state}
+    where id=#{id}
+    </update>
+    <delete id="deleteById">
+        delete from book where id=#{id}
+    </delete>
+    <select id="selectAll" resultType="com.library.domain.Book">
+        select * from book
+    </select>
+    <select id="selectById" resultType="com.library.domain.Book">
+        select * from book where id=#{id}
+    </select>
+    <select id="selectByPage" resultMap="BookMap">
+        SELECT b.*,c.id cid,c.name cname from book b
+        LEFT JOIN category c ON b.categoryId=c.id
+        <include refid="whereSQL"></include>
+        limit #{start},#{pageSize}
+    </select>
+    <resultMap id="BookMap" type="com.library.domain.Book">
+        <id column="id" property="id"></id>
+        <result column="title" property="title"></result>
+        <result column="author" property="author"></result>
+        <result column="publishDate" property="publishDate"></result>
+        <result column="categoryId" property="categoryId"></result>
+        <result column="state" property="state"></result>
+        <association property="category" javaType="Category">
+            <id column="cid" property="id"></id>
+            <result column="cname" property="name"></result>
+        </association>
+    </resultMap>
+    <select id="count" resultType="java.lang.Long">
+        select count(id) from book
+        <include refid="whereSQL"></include>
+    </select>
+    <sql id="whereSQL">
+        <where>
+            <if test="keyword!=null and keyword!=''">
+                title like concat('%',#{keyword},'%')
+            </if>
+        </where>
+    </sql>
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.library.mapper.NameMapper">
+    <resultMap id="NameMap" type="com.library.domain.Name">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="id" property="id"></result>
+        <result column="time" property="time"></result>
+        <result column="number" property="number"></result>
+    </resultMap>
+    <select id="count" resultType="java.lang.Long">
+        select count(id) from leaderboard
+        <include refid="whereSQL"></include>
+    </select>
+    <sql id="whereSQL">
+        <where>
+            <if test="keyword!=null and keyword!=''">
+                name like concat('%',#{keyword},'%')
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectById" resultType="com.library.domain.Name">
+        select * from leaderboard where id=#{id}
+    </select>
+    <select id="selectAll" resultType="com.library.domain.Name">
+        select * from leaderboard
+    </select>
+
+    <insert id="add" >
+        insert into leaderboard(
+            id,name,time,number
+        )values (#{id},#{name},#{time},#{number})
+    </insert>
+
+    <update id="update">
+        update leaderboard
+        set
+            id = #{id},
+            name = #{time},
+            time = #{time},
+            number = #{number}
+        where id = #{id}
+    </update>
+    <delete id="deleteById">
+        delete from leaderboard where id=#{id}
+    </delete>
+    <delete id="batchDelete">
+        delete from leaderboard where id in
+        <foreach collection="list" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

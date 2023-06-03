@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.library.mapper.BorrowersMapper">
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into borrowers(
+            name,sex,age,phone,salt,password
+        )values (
+                 #{name},#{sex},#{age},#{phone},#{salt},#{password}
+                        )
+    </insert>
+    <update id="update">
+        update borrowers
+            set
+                name=#{name}, sex=#{sex}, age=#{age}, phone=#{phone}, salt=#{salt},
+                password=#{password}
+        where id=#{id}
+    </update>
+    <delete id="deleteByid">
+        delete from borrowers where id=#{id}
+    </delete>
+    <delete id="batchDelete">
+        delete from borrowers where id in
+        <foreach collection="list" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <select id="selectAll" resultType="com.library.domain.Borrowers">
+        select * from borrowers
+    </select>
+    <select id="selectByid" resultType="com.library.domain.Borrowers">
+        select * from borrowers where id=#{id}
+    </select>
+    <select id="selectByPage" resultMap="BorrowersMap">
+        SELECT b.*
+        FROM borrowers b
+        <include refid="whereSQL"></include>
+        limit #{start},#{pageSize}
+    </select>
+    <resultMap id="BorrowersMap" type="Borrowers">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="sex" property="sex"></result>
+        <result column="age" property="age"></result>
+        <result column="phone" property="phone"></result>
+        <result column="salt" property="salt"></result>
+        <result column="password" property="password"></result>
+    </resultMap>
+    <select id="count" resultType="java.lang.Long">
+        select count(id) from borrowers b
+        <include refid="whereSQL"></include>
+    </select>
+    <sql id="whereSQL">
+        <where>
+            <if test="keyword!=null and keyword!=''">
+                b.name like concat('%',#{keyword},'%')
+            </if>
+        </where>
+    </sql>
+</mapper>
