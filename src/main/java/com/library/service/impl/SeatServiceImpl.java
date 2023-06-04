@@ -1,7 +1,6 @@
 package com.library.service.impl;
 
-import com.library.domain.Seat;
-import com.library.mapper.AdminMapper;
+import com.library.mapper.domain.Seat;
 import com.library.mapper.SeatMapper;
 import com.library.service.SeatService;
 import org.springframework.beans.factory.annotation.Autowired;

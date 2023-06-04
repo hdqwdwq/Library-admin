@@ -1,6 +1,6 @@
 package com.library.controller;
 
-import com.library.domain.Book;
+import com.library.mapper.domain.Book;
 import com.library.service.query.BookQuery;
 import com.library.service.IBookService;
 import com.library.until.JsonResult;

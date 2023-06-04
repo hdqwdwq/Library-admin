@@ -1,8 +1,8 @@
 package com.library.service.impl;
 
 import com.library.config.MD5Utils;
-import com.library.domain.Admin;
-import com.library.domain.Login;
+import com.library.mapper.domain.Admin;
+import com.library.mapper.domain.Login;
 import com.library.mapper.AdminMapper;
 import com.library.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;

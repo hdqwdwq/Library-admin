@@ -1,7 +1,7 @@
 package com.library.mapper;
 
-import com.library.domain.Admin;
-import com.library.domain.Login;
+import com.library.mapper.domain.Admin;
+import com.library.mapper.domain.Login;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

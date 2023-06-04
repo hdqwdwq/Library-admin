@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.domain.Borrowers;
+import com.library.mapper.domain.Borrowers;
 import com.library.service.query.BorrowersQuery;
 import com.library.until.PageList;
 

@@ -1,9 +1,8 @@
 package com.library.controller;
 
-import com.library.domain.Name;
+import com.library.mapper.domain.Name;
 import com.library.until.JsonResult;
 import com.library.service.NameService;
-import com.library.until.PageList;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

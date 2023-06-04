@@ -24,10 +24,10 @@
             #{id}
         </foreach>
     </delete>
-    <select id="selectAll" resultType="com.library.domain.Borrowers">
+    <select id="selectAll" resultType="com.library.mapper.domain.Borrowers">
         select * from borrowers
     </select>
-    <select id="selectByid" resultType="com.library.domain.Borrowers">
+    <select id="selectByid" resultType="com.library.mapper.domain.Borrowers">
         select * from borrowers where id=#{id}
     </select>
     <select id="selectByPage" resultMap="BorrowersMap">

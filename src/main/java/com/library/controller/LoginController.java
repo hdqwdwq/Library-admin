@@ -1,7 +1,7 @@
 package com.library.controller;
 
-import com.library.domain.Admin;
-import com.library.domain.Login;
+import com.library.mapper.domain.Admin;
+import com.library.mapper.domain.Login;
 import com.library.service.AdminService;
 import com.library.until.JsonResult;
 import io.swagger.annotations.Api;
@@ -9,7 +9,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

@@ -1,7 +1,7 @@
 package com.library.controller;
 
 import com.library.config.MD5Utils;
-import com.library.domain.Borrowers;
+import com.library.mapper.domain.Borrowers;
 import com.library.service.query.BorrowersQuery;
 import com.library.service.BorrowersService;
 import com.library.until.JsonResult;

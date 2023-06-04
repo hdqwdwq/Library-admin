@@ -6,7 +6,7 @@
         <include refid="whereSQL"></include>
         limit #{start},#{pageSize}
     </select>
-    <resultMap id="NoticeMap" type="com.library.domain.Notice">
+    <resultMap id="NoticeMap" type="com.library.mapper.domain.Notice">
         <id column="id" property="id"></id>
         <result column="notice_title" property="notice_title"></result>
         <result column="notice_type" property="notice_type"></result>
@@ -26,10 +26,10 @@
         </where>
     </sql>
 
-    <select id="selectById" resultType="com.library.domain.Notice">
+    <select id="selectById" resultType="com.library.mapper.domain.Notice">
         select * from person_notice where id=#{id}
     </select>
-    <select id="selectAll" resultType="com.library.domain.Notice">
+    <select id="selectAll" resultType="com.library.mapper.domain.Notice">
         select * from person_notice
     </select>
 

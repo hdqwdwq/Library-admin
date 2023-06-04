@@ -21,10 +21,10 @@ values (#{title},#{author},#{category.id},#{publishDate},#{state})
     <delete id="deleteById">
         delete from book where id=#{id}
     </delete>
-    <select id="selectAll" resultType="com.library.domain.Book">
+    <select id="selectAll" resultType="com.library.mapper.domain.Book">
         select * from book
     </select>
-    <select id="selectById" resultType="com.library.domain.Book">
+    <select id="selectById" resultType="com.library.mapper.domain.Book">
         select * from book where id=#{id}
     </select>
     <select id="selectByPage" resultMap="BookMap">
@@ -33,7 +33,7 @@ values (#{title},#{author},#{category.id},#{publishDate},#{state})
         <include refid="whereSQL"></include>
         limit #{start},#{pageSize}
     </select>
-    <resultMap id="BookMap" type="com.library.domain.Book">
+    <resultMap id="BookMap" type="com.library.mapper.domain.Book">
         <id column="id" property="id"></id>
         <result column="title" property="title"></result>
         <result column="author" property="author"></result>

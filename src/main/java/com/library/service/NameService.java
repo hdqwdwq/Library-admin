@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.domain.Name;
+import com.library.mapper.domain.Name;
 
 import java.util.List;
 

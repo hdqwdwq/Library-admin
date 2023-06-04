@@ -1,7 +1,7 @@
 package com.library.controller;
 
 import com.library.config.MD5Utils;
-import com.library.domain.Admin;
+import com.library.mapper.domain.Admin;
 import com.library.service.AdminService;
 import com.library.until.JsonResult;
 import io.swagger.annotations.Api;

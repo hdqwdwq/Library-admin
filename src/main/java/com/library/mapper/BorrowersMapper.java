@@ -1,6 +1,6 @@
 package com.library.mapper;
 
-import com.library.domain.Borrowers;
+import com.library.mapper.domain.Borrowers;
 import com.library.service.query.BorrowersQuery;
 import org.apache.ibatis.annotations.Mapper;
 

@@ -1,7 +1,7 @@
 package com.library.controller;
 
 
-import com.library.domain.Notice;
+import com.library.mapper.domain.Notice;
 import com.library.service.query.NoticeQuery;
 import com.library.service.NoticeService;
 import com.library.until.JsonResult;

@@ -1,6 +1,6 @@
 package com.library.mapper;
 
-import com.library.domain.Book;
+import com.library.mapper.domain.Book;
 import com.library.service.query.BookQuery;
 import org.apache.ibatis.annotations.Mapper;
 

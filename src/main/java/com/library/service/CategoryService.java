@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.domain.Category;
+import com.library.mapper.domain.Category;
 
 import java.util.List;
 
