@@ -12,16 +12,16 @@
         set username=#{username},password=#{password},phone=#{phone},state=#{state}
         where id=#{id}
     </update>
-    <select id="selectAll" resultType="com.library.mapper.domain.Admin">
+    <select id="selectAll" resultType="com.library.domain.Admin">
         select * from admin
     </select>
-    <select id="selectByid" resultType="com.library.mapper.domain.Admin">
+    <select id="selectByid" resultType="com.library.domain.Admin">
         select * from admin where id=#{id}
     </select>
-    <select id="selectByUsername" resultType="com.library.mapper.domain.Login">
+    <select id="selectByUsername" resultType="com.library.domain.Login">
         select * from admin where username=#{username}
     </select>
-    <select id="selectByName" resultType="com.library.mapper.domain.Admin">
+    <select id="selectByName" resultType="com.library.domain.Admin">
         select * from admin where username=#{username}
     </select>
 </mapper>

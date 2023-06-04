@@ -1,7 +1,7 @@
 package com.library.service;
 
-import com.library.mapper.domain.Admin;
-import com.library.mapper.domain.Login;
+import com.library.domain.Admin;
+import com.library.domain.Login;
 
 import java.util.List;
 

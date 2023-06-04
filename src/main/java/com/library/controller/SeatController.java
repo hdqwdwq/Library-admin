@@ -1,6 +1,6 @@
 package com.library.controller;
 
-import com.library.mapper.domain.Seat;
+import com.library.domain.Seat;
 import com.library.service.SeatService;
 import com.library.until.JsonResult;
 import io.swagger.annotations.Api;

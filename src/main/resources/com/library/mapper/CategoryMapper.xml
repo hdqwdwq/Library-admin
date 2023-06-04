@@ -15,10 +15,10 @@
     <delete id="deleteById">
         delete from category where ID=#{id}
     </delete>
-    <select id="selectAll" resultType="com.library.mapper.domain.Category">
+    <select id="selectAll" resultType="com.library.domain.Category">
         select * from category
     </select>
-    <select id="selectById" resultType="com.library.mapper.domain.Category">
+    <select id="selectById" resultType="com.library.domain.Category">
         select * from category where ID=#{ID}
     </select>
 </mapper>

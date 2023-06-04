@@ -1,6 +1,6 @@
 package com.library.service.impl;
 
-import com.library.mapper.domain.Name;
+import com.library.domain.Name;
 import com.library.mapper.NameMapper;
 import com.library.service.NameService;
 import org.springframework.beans.factory.annotation.Autowired;

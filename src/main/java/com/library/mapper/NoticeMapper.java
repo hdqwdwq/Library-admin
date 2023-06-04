@@ -1,7 +1,7 @@
 package com.library.mapper;
 
 
-import com.library.mapper.domain.Notice;
+import com.library.domain.Notice;
 import com.library.service.query.NoticeQuery;
 import org.springframework.stereotype.Repository;
 

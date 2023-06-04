@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.library.mapper.NameMapper">
-    <resultMap id="NameMap" type="com.library.mapper.domain.Name">
+    <resultMap id="NameMap" type="com.library.domain.Name">
         <id column="id" property="id"></id>
         <result column="name" property="name"></result>
         <result column="id" property="id"></result>
@@ -20,10 +20,10 @@
         </where>
     </sql>
 
-    <select id="selectById" resultType="com.library.mapper.domain.Name">
+    <select id="selectById" resultType="com.library.domain.Name">
         select * from leaderboard where id=#{id}
     </select>
-    <select id="selectAll" resultType="com.library.mapper.domain.Name">
+    <select id="selectAll" resultType="com.library.domain.Name">
         select * from leaderboard
     </select>
 

@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.mapper.domain.Book;
+import com.library.domain.Book;
 import com.library.service.query.BookQuery;
 import com.library.until.PageList;
 

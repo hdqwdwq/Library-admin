@@ -1,4 +1,4 @@
-package com.library.mapper.domain;
+package com.library.domain;
 
 import lombok.Data;
 

@@ -1,13 +1,14 @@
 package com.library.mapper;
 
-import com.library.mapper.domain.Name;
+import com.library.domain.Name;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 @Mapper
 public interface NameMapper {
     List<Name> selectAll();
-    //根据id查询单条数据
+
+        //根据id查询单条数据
      Name selectById(long id);
     //新增
     void add(Name name);

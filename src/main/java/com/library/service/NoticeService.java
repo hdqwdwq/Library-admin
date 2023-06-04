@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.mapper.domain.Notice;
+import com.library.domain.Notice;
 import com.library.service.query.NoticeQuery;
 import com.library.until.PageList;
 

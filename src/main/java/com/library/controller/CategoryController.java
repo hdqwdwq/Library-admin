@@ -1,6 +1,6 @@
 package com.library.controller;
 
-import com.library.mapper.domain.Category;
+import com.library.domain.Category;
 import com.library.service.CategoryService;
 import com.library.until.JsonResult;
 import io.swagger.annotations.Api;

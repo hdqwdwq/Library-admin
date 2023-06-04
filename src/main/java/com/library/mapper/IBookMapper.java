@@ -1,6 +1,6 @@
 package com.library.mapper;
 
-import com.library.mapper.domain.Book;
+import com.library.domain.Book;
 import com.library.service.query.BookQuery;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,7 +10,8 @@ import java.util.List;
 public interface IBookMapper {
 
     List<Book> selectAll();
-    //根据id查询单条数据
+
+        //根据id查询单条数据
     Book selectById(long id);
     //新增
     void add(Book book);

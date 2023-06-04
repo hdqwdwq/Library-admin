@@ -1,6 +1,6 @@
 package com.library.controller;
 
-import com.library.mapper.domain.Name;
+import com.library.domain.Name;
 import com.library.until.JsonResult;
 import com.library.service.NameService;
 import io.swagger.annotations.Api;

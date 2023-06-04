@@ -1,6 +1,6 @@
 package com.library.mapper;
 
-import com.library.mapper.domain.Seat;
+import com.library.domain.Seat;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

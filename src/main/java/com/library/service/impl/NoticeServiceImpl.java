@@ -1,7 +1,7 @@
 package com.library.service.impl;
 
 
-import com.library.mapper.domain.Notice;
+import com.library.domain.Notice;
 import com.library.mapper.NoticeMapper;
 import com.library.service.query.NoticeQuery;
 import com.library.service.NoticeService;

@@ -15,10 +15,10 @@
     <delete id="deleteById">
         delete from seat where id=#{id}
     </delete>
-    <select id="selectAll" resultType="com.library.mapper.domain.Seat">
+    <select id="selectAll" resultType="com.library.domain.Seat">
         select * from seat
     </select>
-    <select id="selectByPositionid" resultType="com.library.mapper.domain.Seat">
+    <select id="selectByPositionid" resultType="com.library.domain.Seat">
         select * from seat where position_id=#{position_id}
     </select>
 </mapper>

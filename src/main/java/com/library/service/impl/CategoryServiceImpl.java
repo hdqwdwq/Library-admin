@@ -1,6 +1,7 @@
 package com.library.service.impl;
 
-import com.library.mapper.domain.Category;
+import com.library.domain.Category;
+import com.library.mapper.AdminMapper;
 import com.library.mapper.CategoryMapper;
 import com.library.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
