@@ -3,12 +3,13 @@ package com.library.mapper;
 
 import com.library.domain.Notice;
 import com.library.service.query.NoticeQuery;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 
-@Repository
+@Mapper
 public interface NoticeMapper {
 
 
